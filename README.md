@@ -1,17 +1,3 @@
-# Python Code Execution API
-
-A simple API service that executes arbitrary Python code and returns the result of the `main()` function along with any stdout output.
-
-## Features
-
-- Execute Python scripts via REST API
-- Capture and return stdout output
-- Support for common libraries (pandas, numpy)
-- Lightweight Docker container
-- Input validation and error handling
-- JSON response format
-
-## API Endpoints
 
 ### POST /execute
 
@@ -98,19 +84,3 @@ docker build -t python-executor .
 docker run -p 8080:8080 python-executor
 ```
 
-## Requirements
-
-- Python script must define a `main()` function
-- The `main()` function's return value should be JSON-serializable
-- Print statements will be captured in the `stdout` field
-- Errors will be returned in the `stderr` field
-
-## Security Notes
-
-- This service executes arbitrary code and should only be used in trusted environments
-- Consider implementing additional security measures for production use
-- The service runs on port 8080 by default
-
-## Deployment
-
-The service is designed to be deployed on Google Cloud Run or similar container platforms. The Docker image exposes port 8080 and is ready for deployment.
